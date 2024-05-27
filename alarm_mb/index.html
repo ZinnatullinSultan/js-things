@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/notification.css">
+  <title>project</title>
+</head>
+
+<body>
+
+  <div class="notification">
+    <div class="notification__header">
+      <img src="img/notification.png" alt="">
+      <h2>Уведомления</h2>
+    </div>
+    <div class="notification__info"></div>
+    <div class="notification__form">
+      <input type="time" class="time" name="time">
+      <textarea placeholder="Введите текст уведомления" maxlength="100" class="text"></textarea>
+      <button class="add">ОК</button>
+    </div>
+    <div class="notification__list" hidden>
+      <h3>Список уведомлений</h3>
+      <div class="list"></div>
+      <button class="clear">Очистить список</button>
+    </div>
+  </div>
+
+  <script src="js/notification.js"></script>
+</body>
+
+</html>

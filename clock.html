@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 20 - Часы</title>
+  <style>
+  #clock {
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+  }</style>
+</head>
+<body>
+
+  <div id="clock"></div>
+
+  <script>
+    function update(){
+      let date = new Date();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+
+      if(hours<10) hours='0'+ hours;
+      if(minutes<10) minutes='0'+ minutes;
+      if(seconds<10) seconds='0'+ seconds;
+
+      clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+    }
+    update();
+    setInterval(update,1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgressBar</title>
+    <style>
+      .text{
+        background-color: transparent;
+        position: absolute;
+        z-index: 5;
+        top: 8px;
+        left: 50%;
+        font-size: 25px;
+      }
+      .timer-progressbar {
+        display: flex;
+        align-items: center;
+        background-color: tomato;
+        text-align: center;
+        position: relative;
+        height: 50px;
+      }
+      .timer-progressbar__fill {
+        background-color: springgreen;
+        transition: all 0.5s linear;
+        width: 0;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="timer-progressbar">
+      <span class="text">0%</span>
+      <div class="timer-progressbar__fill"></div>
+    </div>
+
+    <script>
+      function progressBar(seconds) {
+        let start = new Date();
+        let end = new Date();
+        end = end.setSeconds(end.getSeconds() + seconds);
+
+        let fill = document.querySelector('.timer-progressbar__fill');
+        let sp = document.querySelector('.text');
+
+        let interval = setInterval(() => {
+          let currentTime = new Date();
+          let leftPercent = Math.trunc(
+            ((end - currentTime) / (end - start)) * 100
+          );
+          let passedPercent = +(100 - leftPercent);
+
+          sp.textContent = passedPercent + '%';
+          fill.style.width = passedPercent + '%';
+
+          if (leftPercent == 0) {
+            clearInterval(interval);
+          }
+        });
+      }
+      setTimeout(()=> progressBar(5),2000)
+    </script>
+  </body>
+</html>

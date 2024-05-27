@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Депозитный калькулятор</title>
+  <link rel="stylesheet" href="css/styleG.css">
+</head>
+<body>
+  <main class="main">
+    <section class="calc">
+      <div class="container">
+        <h1 class="calc__title">Депозитный калькулятор</h1>
+        <div class="calc__inner">
+          <div class="calc__form">
+            <form action="" name="myForm" >
+              <div>
+                <label for="initial">Первоначальный депозит:</label>
+                <input type="number" name="initial" id="initial" value="10000" >
+              </div>
+              <div>
+                <label for="time">Срок вклада:</label>
+                <select name="time" id="time">
+                  <option value="3">3 (минимум)</option>
+                  <option value="6">6 (полгода)</option>
+                  <option value="12" selected>12 (год)</option>
+                  <option value="18">18 (1.5 года)</option>
+                  <option value="24">24 (2 года)</option>
+                  <option value="30">30 (2.5 года)</option>
+                  <option value="36">36 (3 года)</option>
+                  <option value="60">60 (5 лет)</option>
+                </select>
+              </div>
+              <div>
+                <label for="percent">Годовая процентная ставка:</label>
+                <input type="number" name="percent" id="percent" value="5">
+              </div>
+            </form>
+          </div>
+          <div class="calc__gistogr gist">
+            <div class="gist__item">
+              <div class="gist__text">Было</div>
+              <div class="gist__sum gist__sum--was"></div>
+              <div class="gist__gistogr gist__gistogr--red"></div>
+            </div>
+          </div>
+          <div class="calc__gistogr gist">
+            <div class="gist__item">
+              <div class="gist__text">Будет</div>
+              <div class="gist__sum gist__sum--will"></div>
+              <div class="gist__gistogr gist__gistogr--green"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
